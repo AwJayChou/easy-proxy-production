@@ -1,6 +1,6 @@
 {
-  "name": "easy-proxy-pro",
-  "version": "1.0.0",
+  "name": "@lulu/easy-proxy-production",
+  "version": "1.0.1",
   "description": "easy way to proxy production without charles",
   "main": "src/index.js",
   "bin": {
