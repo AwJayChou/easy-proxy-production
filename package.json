@@ -1,5 +1,5 @@
 {
-  "name": "@lulu/easy-proxy-production",
+  "name": "easy-proxy-production",
   "version": "1.0.1",
   "description": "easy way to proxy production without charles",
   "main": "src/index.js",

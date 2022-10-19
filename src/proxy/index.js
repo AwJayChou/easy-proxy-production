@@ -1,7 +1,6 @@
 const exec = require('child_process').exec;
 
 module.exports = (pkg, config) => {
-  console.log('## config ==> ', config)
   const { port, host } = config || {}
   const eport = port || '8000'
   const ehost = host || 'localhost'

@@ -1,18 +1,22 @@
 /* eslint-disable */
 import SockJS from 'sockjs-client';
 
-function createSocketClient(host, port, prefix) {
+function createSocketClient(options) {
+  const { host, port, prefix, proto } = options
   window.onload = function () {
     const sprefix = prefix || 'sockjs-node';
     const sport = port || '8080';
     const sorigin = host || 'localhost';
-    const scheme = 'http';
+    const scheme = proto || 'http';
     const url = `${scheme}://${sorigin}:${sport}/${sprefix}`;
+    console.log('## url ==>', url)
     var ws = new SockJS(url);
     ws.onopen = function () {
+      console.log('## open')
       ws.send('from client: hello');
     };
     ws.onmessage = function (e) {
+      console.log('## message', e)
       try {
         let ret = JSON.parse(e.data);
         switch (ret.type) {
